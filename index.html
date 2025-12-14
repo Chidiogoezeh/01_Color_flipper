@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Flipper</title>
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h3>Color Flipper</h3>
-    <button id="red" onclick="setColor('red')">Red</button>   <!-- onclick is a javascript function embedded which we can can call on our javascript code -->
-    <button id="green" onclick="setColor('green')">Green</button>
-    <button id="blue" onclick="setColor('blue')">Blue</button>
-    <button onclick="randomColor()">Random</button>
+    <h3 id="color-value">Color Flipper</h3> 
     
-    <script src="/index.js"></script>   <!-- Normal recommendation is to include js files in the head element, but some also recommemend the bottom of the html document for performance purposes -->
+    <button id="red">Red</button>   
+    <button id="green">Green</button>
+    <button id="blue">Blue</button>
+    <button id="random-btn">Random</button>
+    
+    <script src="/script.js"></script> 
 </body>
 </html>

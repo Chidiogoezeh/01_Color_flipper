@@ -1,0 +1,44 @@
+body {
+    transition: background-color 0.5s ease; /* Smooth transition for color changes */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+h3 {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly visible background for the color text */
+}
+
+/* Centralized common button styling */
+button {
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    margin: 5px;
+    color: white; /* Default text color for buttons */
+    border: none;
+    cursor: pointer; 
+    transition: background-color 0.2s ease;
+}
+
+/* Specific colors for the Red, Green, Blue buttons */
+#red {
+    background-color: red;
+}
+#green {
+    background-color: green;
+}
+#blue {
+    background-color: blue;
+}
+
+/* Style for the random button */
+#random-btn {
+    background-color: #555; /* A neutral color */
+}
