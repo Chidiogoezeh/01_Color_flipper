@@ -3,6 +3,15 @@ A simple, pure front-end web application that allows users to change the backgro
 
 This is a conceptual diagram that illustrates the flow:
 
+    A[index.html] -- Links --> B(index.css)
+    A -- Loads --> C(index.js)
+    D[User Input] -- Triggers Events --> C
+    C -- Manipulates DOM & Styles --> A
+    B -- Styles --> A
+    
+    style A fill:#f9f,stroke:#333
+    style B fill:#ccf,stroke:#333
+    style C fill:#cfc,stroke:#333
 
 🚀 Features
 Color Selection: Easily change the background to Red, Green, or Blue.
