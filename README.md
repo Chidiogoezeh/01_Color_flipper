@@ -1,6 +1,9 @@
 Color Flipper Web Project
 A simple, pure front-end web application that allows users to change the background color of the page using pre-set names or a randomized RGB generator. The project demonstrates best practices in separating concerns between HTML, CSS, and vanilla JavaScript, including improved accessibility features
 
+This is a conceptual diagram that illustrates the flow:
+
+
 🚀 Features
 Color Selection: Easily change the background to Red, Green, or Blue.
 
