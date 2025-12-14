@@ -48,19 +48,15 @@ The application will launch immediately, setting a random background color on lo
 
 📂 Project Structure
 
-File        Purpose     Key Content
-index.html  Markup      Main structure, links CSS/JS, contains buttons and the color display element (#color-value).
-
-style.css   Styling     Defines button look, centers content, and includes a smooth transition for color changes.
-
-script.js   Logic       Selects DOM elements, contains randomColor and setColor functions, handles RGB-to-Hex           conversion, and manages the text contrast check.
+File,Purpose,Key Content
+index.html,Markup,"Main structure, links CSS/JS, contains buttons and the color display element (#color-value)."
+index.css,Styling,"Defines button look, centers content, and includes a smooth transition for color changes."
+index.js,Logic,"Selects DOM elements, contains randomColor and setColor functions, handles RGB-to-Hex conversion, and manages the text contrast check."
 
 
 💡 Code Highlights
 Accessibility Check (script.js)
 The project ensures readability by dynamically changing the text color based on the calculated brightness of the background using a luminosity formula:
-
-JavaScript
 
 // Luminosity formula approximation
 const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
@@ -68,10 +64,9 @@ const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
 // Set text color for contrast
 const textColor = brightness > 125 ? '#000' : '#FFF'; 
 body.style.color = textColor; 
+
 Event Listener Setup
 All interactivity is bound programmatically in script.js:
-
-JavaScript
 
 // Binding the Red button to the setColor function
 redButton.addEventListener('click', () => setColor('red')); 
