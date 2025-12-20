@@ -3,17 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Flipper</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>Pro Color Flipper</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h3 id="color-value">Color Flipper</h3> 
-    
-    <button id="red">Red</button>   
-    <button id="green">Green</button>
-    <button id="blue">Blue</button>
-    <button id="random-btn">Random</button>
-    
-    <script src="/script.js"></script> 
+
+    <main class="app-card">
+        <header>
+            <h1 id="color-label">Color Flipper</h1>
+            <div class="hex-input-container">
+                <input type="text" id="hexInput" maxlength="7" spellcheck="false">
+            </div>
+        </header>
+
+        <section class="slider-group">
+            <div class="control">
+                <label for="redRange">R</label>
+                <input type="range" id="redRange" min="0" max="255" value="127" class="slider red-thumb">
+            </div>
+            <div class="control">
+                <label for="greenRange">G</label>
+                <input type="range" id="greenRange" min="0" max="255" value="127" class="slider green-thumb">
+            </div>
+            <div class="control">
+                <label for="blueRange">B</label>
+                <input type="range" id="blueRange" min="0" max="255" value="127" class="slider blue-thumb">
+            </div>
+        </section>
+
+        <section class="button-grid">
+            <button id="save-btn" class="btn-save">Save Color</button>
+            <button id="download-btn" class="btn-csv">Export CSV</button>
+            <button id="clear-btn" class="btn-clear">Clear All</button>
+        </section>
+
+        <footer class="palette-area">
+            <h3>Saved Palette</h3>
+            <ul id="color-list"></ul>
+        </footer>
+    </main>
+
+    <div id="toast-container"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>

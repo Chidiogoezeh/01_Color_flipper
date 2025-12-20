@@ -1,44 +1,111 @@
+:root {
+    --glass: rgba(255, 255, 255, 0.15);
+    --transition: 0.3s ease;
+}
+
 body {
-    transition: background-color 0.5s ease; /* Smooth transition for color changes */
-    height: 100vh;
+    margin: 0;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    transition: background-color var(--transition);
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-h3 {
-    margin-bottom: 20px;
+/* Responsive Card */
+.app-card {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Fixed width on desktop */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Adjustments for small screens */
+@media (max-width: 480px) {
+    .app-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+    
+    .slider {
+        width: 100%; /* Sliders take full width on mobile */
+    }
+}
+
+#hexInput {
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: inherit;
     padding: 10px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly visible background for the color text */
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 1.4rem;
+    text-align: center;
+    width: 140px;
+    outline: none;
+    margin-top: 10px;
 }
 
-/* Centralized common button styling */
+.slider-group { margin: 20px 0; }
+.control { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+
+.slider {
+    -webkit-appearance: none;
+    flex-grow: 1;
+    height: 8px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.red-thumb::-webkit-slider-thumb { background: #ff4d4d; }
+.green-thumb::-webkit-slider-thumb { background: #2ecc71; }
+.blue-thumb::-webkit-slider-thumb { background: #3498db; }
+
+.button-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 button {
-    border-radius: 5px;
-    width: 100px;
-    height: 40px;
-    margin: 5px;
-    color: white; /* Default text color for buttons */
+    padding: 12px;
     border: none;
-    cursor: pointer; 
-    transition: background-color 0.2s ease;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
 }
 
-/* Specific colors for the Red, Green, Blue buttons */
-#red {
-    background-color: red;
-}
-#green {
-    background-color: green;
-}
-#blue {
-    background-color: blue;
+.btn-save { background: #2c3e50; color: white; grid-column: span 2; }
+.btn-csv { background: #fff; color: #2c3e50; }
+.btn-clear { background: #e74c3c; color: white; }
+
+#color-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin-top: 15px;
 }
 
-/* Style for the random button */
-#random-btn {
-    background-color: #555; /* A neutral color */
+#toast-container { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); }
+.toast {
+    background: #333; color: white; padding: 10px 20px; border-radius: 20px;
+    margin-top: 5px; animation: slideIn 0.3s ease;
 }
+@keyframes slideIn { from { transform: translateY(20px); opacity: 0; } }
