@@ -13,7 +13,7 @@ This is a conceptual diagram that illustrates the flow:
     style B fill:#ccf,stroke:#333
     style C fill:#cfc,stroke:#333
 
-🚀 Features
+Features
 Color Selection: Easily change the background to Red, Green, or Blue.
 
 Random Color Generation: Generate a unique background color using a randomized RGB value.
@@ -24,14 +24,12 @@ Accessibility (A11y): Dynamically adjusts the primary text color (black or white
 
 Clean Code: All event handling is managed through JavaScript addEventListener calls, keeping the index.html file clean of inline JavaScript (onclick).
 
-🛠️ Technologies Used
+Technologies Used
 HTML5: Structure and content.
-
 CSS3 (Vanilla): Styling and layout.
-
 JavaScript (Vanilla JS): Logic, DOM manipulation, color generation, and event handling.
 
-⚙️ Setup and Installation
+Setup and Installation
 This is a pure front-end project and requires no server-side setup.
 
 Prerequisites
@@ -46,7 +44,7 @@ Open: Double-click index.html to open it directly in your default web browser.
 
 The application will launch immediately, setting a random background color on load.
 
-📂 Project Structure
+Project Structure
 
 File,Purpose,Key Content
 index.html,Markup,"Main structure, links CSS/JS, contains buttons and the color display element (#color-value)."
@@ -54,27 +52,27 @@ index.css,Styling,"Defines button look, centers content, and includes a smooth t
 index.js,Logic,"Selects DOM elements, contains randomColor and setColor functions, handles RGB-to-Hex conversion, and manages the text contrast check."
 
 
-💡 Code Highlights
+Code Highlights
 Accessibility Check (script.js)
 The project ensures readability by dynamically changing the text color based on the calculated brightness of the background using a luminosity formula:
 
-// Luminosity formula approximation
+Luminosity formula approximation
 const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
 
-// Set text color for contrast
+Set text color for contrast
 const textColor = brightness > 125 ? '#000' : '#FFF'; 
 body.style.color = textColor; 
 
 Event Listener Setup
 All interactivity is bound programmatically in script.js:
 
-// Binding the Red button to the setColor function
+Binding the Red button to the setColor function
 redButton.addEventListener('click', () => setColor('red')); 
-// Binding the Random button
+Binding the Random button
 randomButton.addEventListener('click', randomColor);
 
 
-🤝 Contribution
+Contribution
 Feel free to fork the repository, suggest improvements, or submit pull requests!
 
 Fork the project.
@@ -87,5 +85,5 @@ Push to the Branch (git push origin feature/AmazingFeature).
 
 Open a Pull Request.
 
-📝 License
+License
 Distributed under the MIT License. See LICENSE.md for more information.
